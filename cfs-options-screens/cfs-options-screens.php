@@ -483,7 +483,7 @@ class CFS_Options_Screens {
 	function get_field_group_id_from_title( $title = '' ) {
 		$id = 0;
 
-		$field_group_obj = get_page_by_title( $title, 'OBJECT', 'cfs' );
+		//$field_group_obj = get_page_by_title( $title, 'OBJECT', 'cfs' );
 
 		// deprecated fix
 		$query = new WP_Query(
@@ -503,10 +503,10 @@ class CFS_Options_Screens {
 		);
 		
 		if ( ! empty( $query->post ) ) {
-			//$field_group_obj = $query->post;
+			$field_group_obj = $query->post;
 		}
 		else {
-			//$field_group_obj = null;
+			$field_group_obj = null;
 		}
 
 		if ( $field_group_obj instanceof WP_Post ) {
